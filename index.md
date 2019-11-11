@@ -17,12 +17,14 @@ title: "Vigor: Verification of Software Network Functions with No Verification E
 _**Vigor**_ is a software stack and toolchain for building and running software network middleboxes that are guaranteed to be *correct*,
 while preserving *competitive performance* and developer *productivity*.
 
+</div>
+<div class="col-md-12">
+{: .text-justify}
 Developers write the core of the middlebox — the network function (NF) — in C,
 on top of a standard packet-processing framework ([DPDK](https://www.dpdk.org)),
 putting persistent state in data structures from Vigor’s library (libVig);
 the Vigor toolchain then automatically verifies that the resulting software stack correctly implements a specification,
 which is written in Python. 
-
 </div>
 </div>
 
