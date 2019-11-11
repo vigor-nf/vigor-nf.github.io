@@ -11,7 +11,7 @@ title: "Vigor: Verification of Software Network Functions with No Verification E
 <div class="col-md-8">
 
 {: #overview .text-center}
-# Verification of Software <abbr title="Network Functions">NFs</abbr> with <br/> No Verification Expertise
+## Verification of Software <abbr title="Network Functions">NFs</abbr> with <br/> No Verification Expertise
 
 {: .lead}
 _**Vigor**_ is a software stack and toolchain for building and running software network middleboxes that are guaranteed to be *correct*,
@@ -74,7 +74,7 @@ We developed five representative NFs:
 * a NAT,
 * a [Maglev](https://ai.google/research/pubs/pub44824/) load balancer,
 * a MAC-learning bridge,
-* a firewall, and
+* a stateful firewall, and
 * a traffic policer,
 
 and verified with Vigor that they satisfy standards-derived specifications, are memory-safe, and do not crash or hang.
