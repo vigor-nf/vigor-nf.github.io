@@ -68,3 +68,28 @@ table tr th :last-child, table tr td :last-child {
     text-decoration-line: underline;
     text-decoration-style: dotted;
 }
+
+.example-wrap { width: 500px; height: 400px; padding: 0; overflow: hidden; float: left;}
+.example-frame {
+    width: 1500px; height: 1200px; border: 1px solid black;
+    -ms-zoom: 0.33;
+    -moz-transform: scale(0.33);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.33);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.33);
+    -webkit-transform-origin: 0 0;
+}
+
+/*
+// Scale the items in the example project page gallery
+.example-frame {
+    -ms-zoom: 0.33;
+    -moz-transform: scale(0.33);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.33);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.33);
+    -webkit-transform-origin: 0 0;
+}
+*/
