@@ -6,7 +6,7 @@ title: "Vigor: Verification of Software Network Functions with No Verification E
 {::options parse_block_html="true" /}
 <div class="row">
 <div class="col-md-4">
-<img src="vigor-workflow.png" style="width:100%"/>
+![Vigor workflow](images/vigor-workflow.png){: width="100%"}
 </div>
 <div class="col-md-8">
 
@@ -82,10 +82,49 @@ and verified with Vigor that they satisfy standards-derived specifications, are 
 * * *
 
 {: .text-center}
-#### Performance 
+#### Runtime Performance 
+{::options parse_block_html="true" /}
 
 {: .text-justify}
-Latency and Throughput are competitive. (TBD)
+We measure runtime performance on Intel Xeon #5-2667 machines at 90% occupancy of the NF's main data structure and compare it with performance of [Click](https://github.com/tbarbette/fastclick) modular router based on DPDK kernel bypass framework.
+Only for the policer we couldn't find off-the-shelf Click element so we use [moonpol](https://github.com/erkinkirdan/moonpol/) instead.
+
+Vigor does not support batching, so all Vigor NFs process 1 packet at a time. However we measure performance of the default batching mode for the baseline NFs as well as their non-batching versions.
+
+All NFs run on a single core.
+
+##### Throughput
+<div class="row">
+<div class="col-md-8">
+![Throughput barchart](images/throughput-barchart.png){: width="100%"}
+</div>
+<div class="col-md-4">
+
+{: .text-justify}
+Vigor NFs have competitive throughput with the non-batching baselines.
+The batching benefit shows here as about 2x better throughput on some NFs.
+
+We believe that the Vigor NFs sustain sufficient throughput for most non-performance critical applications.
+
+</div>
+</div>
+{: .text-justify}
+
+##### Latency
+<div class="row">
+<div class="col-md-4">
+
+{: .text-justify}
+Vigor NFs have minimal average latency across all experiments, likely because of their monolithic structure.
+The monolithic structure poses no issue, since we verify correctness of the whole software stack.
+
+Note, how batching always degrades the average latency due to the necessary delay of accumulating a batch.
+
+</div>
+<div class="col-md-8">
+![Latency barchart](images/latency-barchart.png){: width="100%"}
+</div>
+</div>
 
 * * *
 
